@@ -22,6 +22,8 @@ mongoose.connect("mongodb://localhost:27017/vth-element",
 
 // routes
 app.use("/auth", require('./routes/authRouter.js'))
+app.use("/protected", expressJWT({ secret: process.env.MY_SECRET, algorithms: ['HS256'] }))
+app.use("/protected/shares", require('./routes/shareRouter.js'))
 
 // error handler
 app.use((err, req, res, next) => {
