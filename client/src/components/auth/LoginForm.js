@@ -2,8 +2,8 @@ export default function LoginForm(props) {
     const {username, password, handleSubmit, handleChange, btnText} = props
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="login-form-container">
+            <form className="form login-form" onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="username"

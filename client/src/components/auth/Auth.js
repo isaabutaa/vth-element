@@ -9,7 +9,6 @@ export default function Auth() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(loginCredentials)
         loginOrSignupFunc() 
     }
 
@@ -26,7 +25,7 @@ export default function Auth() {
         loginOrSignup === "Login" ? login(loginCredentials) : signup(loginCredentials)
     }
 
-    const memberOrNot = loginOrSignup === "Login" ? "Not a member? Sign Up." : "Already a member? Login."
+    const memberOrNot = loginOrSignup === "Login" ? "Not a member? Sign Up" : "Already a member? Login"
     return (
         <div>
             <LoginForm
@@ -35,7 +34,7 @@ export default function Auth() {
                 btnText={loginOrSignup}
                 {...loginCredentials} 
             />
-            <p onClick={() => setBtnText()}>{memberOrNot}</p>
+            <p className="toggle-member-txt" onClick={() => setBtnText()}>{memberOrNot}</p>
         </div>
     )
 }
