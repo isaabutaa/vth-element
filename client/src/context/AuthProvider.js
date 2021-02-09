@@ -11,7 +11,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 const initUserState = {
-    user: JSON.parse(localStorage.getItem) || {},
+    user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || ""
 }
 
@@ -45,7 +45,7 @@ export default function AuthProvider(props) {
         localStorage.removeItem("token")
         setUserState({ user: {}, token: "" })
     }
-    
+
     return (
         <authContext.Provider 
             value={{
