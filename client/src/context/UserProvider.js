@@ -24,13 +24,29 @@ export default function UserProvider(props) {
             .catch(err => console.error(err.response.data.errMsg))
     }
 
+    function saveAboutMe(userAboutMeObj) {
+        userAxios.post("/protected/about-me", userAboutMeObj)
+            .then(res => {
+                setUserAboutMe(res.data[0].text)
+            })
+            .catch(err => console.error(err.response.data.errMsg))
+    }
+
+    function getAboutMe() {
+        userAxios.get("/protected/about-me/user")
+            .then(res => setUserAboutMe(res.data[0].text))
+            .catch(err => console.error(err.response.data.errMsg))
+    }
+
     return (
         <UserContext.Provider 
             value={{
                 userShares,
                 userAboutMe,
                 getUserShares,
-                addShare
+                addShare,
+                saveAboutMe,
+                getAboutMe
             }}
         >
             {props.children}

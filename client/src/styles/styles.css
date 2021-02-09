@@ -80,6 +80,18 @@ body {
     color: whitesmoke;
 }
 
+.about-container {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-container h3, p {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+}
+
 .shares-list-container {
     width: 75%;
     margin: 15px auto;

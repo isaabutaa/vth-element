@@ -3,7 +3,7 @@ const aboutRouter = express.Router()
 const About = require('../models/about.js')
 
 // get about me text by user
-aboutRouter.get("/user-about", (req, res, next) => {
+aboutRouter.get("/user", (req, res, next) => {
     About.find({ user: req.user._id }, (err, aboutText) => {
         if(err) {
             res.status(500)
