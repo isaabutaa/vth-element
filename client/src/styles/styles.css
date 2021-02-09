@@ -1,8 +1,11 @@
-/* Mobile styling */
+/* ----------------- Mobile styling -------------------- */
 
 body {
     background-color: #333333;
+    margin: 0;
 }
+
+/* login page */
 
 .title {
     text-align: center;
@@ -38,10 +41,6 @@ body {
     font-family: sans-serif;
 }
 
-.login-form {
-    /* styling */
-}
-
 .toggle-member-txt {
     text-align: center;
     font-family: sans-serif;
@@ -53,4 +52,41 @@ body {
     font-family: sans-serif;
     text-decoration-line: underline;
     color: whitesmoke;
+}
+
+/* navbar */
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    margin-top: 5px;
+}
+
+.nav-link {
+    color: #333333;
+    font-family: sans-serif;
+    text-decoration-line: underline;
+}
+
+/* profile */
+
+.user-greeting {
+    text-align: center;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+.shares-list-container {
+    width: 75%;
+    margin: 15px auto;
+}
+
+.share {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: left;
 }
