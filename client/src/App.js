@@ -17,7 +17,7 @@ export default function App() {
                     { token ? <Redirect to="/profile" /> : <Auth /> }
                 </Route>
                 <Route path="/profile">
-                    <Profile />
+                    { !token ? <Redirect to="/" /> : <Profile /> }
                 </Route>
             </Switch>
             {navbar}
