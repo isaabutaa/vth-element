@@ -110,18 +110,15 @@ body {
     margin-bottom: 0;
 }
 
-p:nth-of-type(1) {
+.share p {
     text-align: left;
     font-size: small;
     display: inline-block;
 }
 
 .edit, .delete {
-    text-align: left;
     padding: 5px;
     margin: 2.5px;
-    display: inline-block;
-    font-size: small;
 }
 
 .edit {

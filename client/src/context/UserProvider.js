@@ -19,6 +19,18 @@ export default function UserProvider(props) {
             .catch(err => console.error(err.response.data.errMsg))
     }
 
+    function editShare(shareId, updatedShare) {
+        userAxios.put(`/protected/shares/${shareId}`, updatedShare)
+            .then(res => setUserShares(userShares => userShares.map(share => share._id === shareId ? res.data : share)))
+            .catch(err => console.error(err.response.data.errMsg))
+    }
+
+    function deleteShare(shareId) {
+        userAxios.delete(`/protected/shares/${shareId}`)
+            .then(res => setUserShares(userShares => userShares.filter(share => share._id !== shareId)))
+            .catch(err => console.error(err.response.data.errMsg))
+    }
+
     function saveAboutMe(userAboutMeObj) {
         userAxios.post("/protected/about-me", userAboutMeObj)
             .then(res => setUserAboutMe(res.data.text))
@@ -41,6 +53,8 @@ export default function UserProvider(props) {
                 userAboutMe,
                 getUserShares,
                 addShare,
+                editShare,
+                deleteShare,
                 saveAboutMe,
                 getAboutMe
             }}

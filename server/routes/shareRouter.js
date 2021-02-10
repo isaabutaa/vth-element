@@ -63,7 +63,7 @@ shareRouter.route("/:shareId")
                     res.status(500)
                     return next(err)
                 }
-                return res.status(200).send(`Deleted ${deletedShare.shareText.slice(0, deletedShare.shareText.length / 2)}...`)
+                return res.status(200).send(`Deleted ${deletedShare.shareText}`)
             }
         )
     })

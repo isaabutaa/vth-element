@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
 export default function ShareForm(props) {
-    const { addShare } = props
-    const [share, setShare] = useState({ shareText: "" })
+    const { submit, btnText, text, shareId } = props
+    const [share, setShare] = useState({ shareText: text || "" })
 
     function handleSubmit(e) {
         e.preventDefault()
-        addShare(share)
+        submit(shareId, share)
         setShare({ shareText: "" })
     }
 
@@ -24,7 +24,7 @@ export default function ShareForm(props) {
                 value={share.shareText}
                 onChange={handleChange}
             />
-            <button>Share!</button>
+            <button>{btnText}</button>
         </form>
     )
 }

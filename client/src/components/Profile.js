@@ -6,10 +6,11 @@ import About from './About.js'
 
 export default function Profile(props) {
     const { user: {username, _id, memberSince} } = useContext(authContext)
-    const { userShares, userAboutMe, addShare, getUserShares, saveAboutMe, getAboutMe } = useContext(UserContext)
+    const { userShares, userAboutMe, addShare, editShare, deleteShare, getUserShares, saveAboutMe, getAboutMe } = useContext(UserContext)
 
     useEffect(() => {
         if(userAboutMe.length > 0) {
+            console.log("hey!!!")
             getAboutMe(_id)
         }
         getUserShares()
@@ -24,7 +25,9 @@ export default function Profile(props) {
             />
             <SharesList 
                 userShares={userShares} 
-                addShare={addShare} 
+                addShare={addShare}
+                editShare={editShare}
+                deleteShare={deleteShare} 
             />
         </div>
     )

@@ -2,12 +2,12 @@ import ShareForm from './ShareForm.js'
 import Share from './Share.js'
 
 export default function SharesList(props) {
-    const { userShares, addShare } = props
+    const { userShares, addShare, editShare, deleteShare } = props
 
-    const shareComponents = userShares.map(share => <Share key={share._id} {...share} />)
+    const shareComponents = userShares.map(share => <Share key={share._id} {...share} editShare={editShare} deleteShare={deleteShare} />)
     return (
         <div className="shares-list-container">
-            <ShareForm addShare={addShare} />
+            <ShareForm submit={addShare} btnText="Share!" />
             { userShares.length > 1 && <h3 style={{
                     color: "whitesmoke", 
                     fontFamily: "sans-serif", 
