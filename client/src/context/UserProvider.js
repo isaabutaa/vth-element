@@ -21,13 +21,16 @@ export default function UserProvider(props) {
 
     function saveAboutMe(userAboutMeObj) {
         userAxios.post("/protected/about-me", userAboutMeObj)
-            .then(res => setUserAboutMe(res.data[0].text))
+            .then(res => setUserAboutMe(res.data.text))
             .catch(err => console.error(err.response.data.errMsg))
     }
 
-    function getAboutMe() {
+    function getAboutMe(userId) {
         userAxios.get("/protected/about-me/user")
-            .then(res => setUserAboutMe(res.data[0].text))
+            .then(res => {
+                const aboutObj = res.data.find(el => el.user === userId)
+                setUserAboutMe(aboutObj.text)
+            })
             .catch(err => console.error(err.response.data.errMsg))
     }
 
