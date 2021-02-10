@@ -13,7 +13,6 @@ export default function Profile(props) {
         getUserShares()
     }, [])
 
-    const shares = userShares[0] && <SharesList userShares={userShares} addShare={addShare} />
     return (
         <div>
             <h1 className="user-greeting">Hello, {username}.</h1>
@@ -21,7 +20,10 @@ export default function Profile(props) {
                 userAboutMe={userAboutMe}
                 saveAboutMe={saveAboutMe}
             />
-            {shares}
+            <SharesList 
+                userShares={userShares} 
+                addShare={addShare} 
+            />
         </div>
     )
 }

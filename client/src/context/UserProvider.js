@@ -9,26 +9,19 @@ export default function UserProvider(props) {
 
     function getUserShares() {
         userAxios.get("/protected/shares/userShares")
-            .then(res => {
-                console.log(res.data[0])
-                setUserShares(res.data)
-            })
+            .then(res => setUserShares(res.data))
             .catch(err => console.error(err.response.data.errMsg))
     }
 
     function addShare(newShare) {
         userAxios.post("/protected/shares", newShare)
-            .then(res => {
-                setUserShares(userShares => ([...userShares, res.data]))
-            })
+            .then(res => setUserShares(userShares => ([...userShares, res.data])))
             .catch(err => console.error(err.response.data.errMsg))
     }
 
     function saveAboutMe(userAboutMeObj) {
         userAxios.post("/protected/about-me", userAboutMeObj)
-            .then(res => {
-                setUserAboutMe(res.data[0].text)
-            })
+            .then(res => setUserAboutMe(res.data[0].text))
             .catch(err => console.error(err.response.data.errMsg))
     }
 
