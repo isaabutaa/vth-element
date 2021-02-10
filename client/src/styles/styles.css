@@ -102,3 +102,32 @@ body {
     font-family: sans-serif;
     text-align: left;
 }
+
+.share h5 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 7.5px;
+    margin-bottom: 0;
+}
+
+p:nth-of-type(1) {
+    text-align: left;
+    font-size: small;
+    display: inline-block;
+}
+
+.edit, .delete {
+    text-align: left;
+    padding: 5px;
+    margin: 2.5px;
+    display: inline-block;
+    font-size: small;
+}
+
+.edit {
+    color: #32cd32;
+}
+
+.delete {
+    color: tomato;
+}
