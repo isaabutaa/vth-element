@@ -9,6 +9,7 @@ export default function About(props) {
                     <div className="about-container">
                         <h3>About:</h3>
                         <p>{userAboutMe}</p>
+                        {/* <p className="edit">edit</p> */}
                     </div>
                 :
                     <AboutForm 

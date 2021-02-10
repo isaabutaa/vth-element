@@ -2,7 +2,7 @@
 
 body {
     background-color: #333333;
-    margin: 0;
+    margin: 0 0 75px 0;
 }
 
 /* login page */
@@ -90,6 +90,22 @@ body {
     color: whitesmoke;
     font-family: sans-serif;
     text-align: center;
+}
+
+.about-container p:nth-of-type(2) {
+    font-size: small;
+    margin: 0;
+}
+
+.share-st-new, .hide-form {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.hide-form {
+    font-size: small;
 }
 
 .shares-list-container {

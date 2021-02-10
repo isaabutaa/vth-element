@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function AboutForm(props) {
-    const [aboutUser, setAboutUser] = useState({text: "Share some things about yourself..."})
+    const [aboutUser, setAboutUser] = useState({ text: "" })
     const { saveAboutMe } = props
 
     function handleChange(e) {
@@ -19,6 +19,7 @@ export default function AboutForm(props) {
             <textarea 
                 type="text"
                 name="text"
+                placeholder="Share something about yourself..."
                 value={aboutUser.text}
                 onChange={handleChange}
             />
