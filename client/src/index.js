@@ -4,12 +4,15 @@ import App from './App.js'
 import './styles/styles.css'
 import AuthProvider from './context/AuthProvider.js'
 import UserProvider from './context/UserProvider.js'
+import HomeProvider from './context/HomeProvider.js'
 
 ReactDOM.render(
     <Router>
         <AuthProvider>
             <UserProvider>
-                <App />
+                <HomeProvider>
+                    <App />
+                </HomeProvider>
             </UserProvider>
         </AuthProvider>
     </Router>, 

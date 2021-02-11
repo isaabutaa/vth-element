@@ -144,3 +144,10 @@ body {
 .delete {
     color: tomato;
 }
+
+/* Home page */
+
+.public-shares {
+    width: 75%;
+    margin: 15px auto;
+}
