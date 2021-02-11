@@ -6,7 +6,7 @@ export default function ShareForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        submit(shareId, share)
+        submit(share, shareId)
         setShare({ shareText: "" })
     }
 

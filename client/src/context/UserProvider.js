@@ -19,7 +19,7 @@ export default function UserProvider(props) {
             .catch(err => console.error(err.response.data.errMsg))
     }
 
-    function editShare(shareId, updatedShare) {
+    function editShare(updatedShare, shareId) {
         userAxios.put(`/protected/shares/${shareId}`, updatedShare)
             .then(res => setUserShares(userShares => userShares.map(share => share._id === shareId ? res.data : share)))
             .catch(err => console.error(err.response.data.errMsg))
