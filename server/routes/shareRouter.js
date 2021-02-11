@@ -5,12 +5,12 @@ const Share = require('../models/share.js')
 // get all shares & post one
 shareRouter.route("/")
     .get((req, res, next) => {
-        Share.find((err, shares) => {
+        Share.find().populate('user').exec((err, shares) => {
             if(err) {
                 res.status(500)
                 return next(err)
             }
-            return res.status(200).send(shares)
+            return res.status(200).send(shares.map(share => share.removeUserPassword()))
         })
     })
     .post((req, res, next) => {

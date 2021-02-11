@@ -21,4 +21,10 @@ const shareSchema = new Schema({
     }
 })
 
+shareSchema.methods.removeUserPassword = function() {
+    const share = this.toObject()
+    delete share.user.password
+    return share
+}
+
 module.exports = mongoose.model("Share", shareSchema)
