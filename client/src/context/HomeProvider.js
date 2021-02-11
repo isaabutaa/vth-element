@@ -11,6 +11,10 @@ export default function HomeProvider(props) {
             .catch(err => console.error(err.response.data.errMsg))
     }
 
+    // function heartShare() {
+
+    // }
+
     return (
         <HomeContext.Provider 
             value={{
