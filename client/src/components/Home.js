@@ -3,7 +3,7 @@ import { HomeContext } from '../context/HomeProvider.js'
 import PublicSharesList from './PublicSharesList.js'
 
 export default function Home(props) {
-    const { allShares, getAllShares } = useContext(HomeContext)
+    const { allShares, getAllShares, heartShare, unHeartShare } = useContext(HomeContext)
 
     useEffect(() => {
         getAllShares()
@@ -12,7 +12,11 @@ export default function Home(props) {
     return (
         <div>
             Home page. All shares/posts go here.
-            <PublicSharesList allShares={allShares} />
+            <PublicSharesList 
+                allShares={allShares} 
+                like={heartShare} 
+                unlike={unHeartShare} 
+            />
         </div>
     )
 }

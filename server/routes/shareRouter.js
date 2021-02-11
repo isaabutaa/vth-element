@@ -68,5 +68,36 @@ shareRouter.route("/:shareId")
         )
     })
 
+// like a share
+shareRouter.put("/like/:shareId", (req, res, next) => {
+    Share.findOneAndUpdate(
+        { _id: req.params.shareId },
+        { $inc: { likes: 1 } },
+        { new: true }).populate('user')
+        .exec((err, likedShare) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(likedShare.removeUserPassword())
+        }
+    )
+})
+
+// unlike a share
+shareRouter.put("/unlike/:shareId", (req, res, next) => {
+    Share.findOneAndUpdate(
+        { _id: req.params.shareId },
+        { $inc: { likes: -1 } },
+        { new: true }).populate('user')
+        .exec((err, unLikedShare) => {
+            if(err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(201).send(unLikedShare.removeUserPassword())
+        }
+    )
+})
 
 module.exports = shareRouter
