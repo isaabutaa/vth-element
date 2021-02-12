@@ -9,10 +9,10 @@ export default function Profile(props) {
     const { userShares, userAboutMe, addShare, editShare, deleteShare, getUserShares, saveAboutMe, getAboutMe } = useContext(UserContext)
 
     useEffect(() => {
-        // if(userAboutMe.length > 0) {
-        //     console.log("hey!!!")
+        if(userAboutMe.length > 1) {
+            // console.log("hey!!!")
             getAboutMe(_id)
-        // }
+        }
         getUserShares()
     }, [])
 

@@ -11,7 +11,6 @@ export default function Home(props) {
 
     return (
         <div>
-            Home page. All shares/posts go here.
             <PublicSharesList 
                 allShares={allShares} 
                 like={heartShare} 
