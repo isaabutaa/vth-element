@@ -1,9 +1,11 @@
 import { useEffect, useContext } from 'react'
 import { HomeContext } from '../context/HomeProvider.js'
+import { authContext } from '../context/AuthProvider.js'
 import PublicSharesList from './PublicSharesList.js'
 
 export default function Home(props) {
-    const { allShares, getAllShares, heartShare, unHeartShare } = useContext(HomeContext)
+    const { allShares, getAllShares, heartShare } = useContext(HomeContext)
+    const { user } = useContext(authContext)
 
     useEffect(() => {
         getAllShares()
@@ -13,8 +15,9 @@ export default function Home(props) {
         <div>
             <PublicSharesList 
                 allShares={allShares} 
-                like={heartShare} 
-                unlike={unHeartShare} 
+                heartShare={heartShare} 
+                userObj={user}
+                // unlike={unHeartShare} 
             />
         </div>
     )

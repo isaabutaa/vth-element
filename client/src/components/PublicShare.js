@@ -1,16 +1,22 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 export default function PublicShare(props) {
-    const [toggleHeartColor, setToggleHeartColor] = useState(false)
-    const { shareText, _id, datePosted, likes, user: {username}, like, unlike } = props
+    const { shareText, _id, datePosted, likes, likedUsers, user: { username }, heartShare, userObj } = props
+    const { _id: userId } = userObj
+    const alreadyLiked = likedUsers.includes(userId)
+    const [heartColor, setHeartColor] = useState(alreadyLiked ? "red" : "whitesmoke")
     const date = datePosted.slice(0, datePosted.indexOf('T'))
     const userName = <span style={{color: "blue"}}>{username}</span>
-    const heartColor = toggleHeartColor ? "red" : "whitesmoke"
     const heart = <span style={{color: heartColor}} onClick={() => likeShare()}>&#10084;</span>
-
+    
     function likeShare() {
-        setToggleHeartColor(prev => !prev)
-        toggleHeartColor ? unlike(_id) : like(_id)
+        if(alreadyLiked) {
+            heartShare(_id, "unlike")
+            setHeartColor("whitesmoke")
+        } else {
+            heartShare(_id, "like")
+            setHeartColor("red")
+        }
     }
 
     return (
