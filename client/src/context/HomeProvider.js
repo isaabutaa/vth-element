@@ -11,29 +11,29 @@ export default function HomeProvider(props) {
             .catch(err => console.error(err.response.data.errMsg))
     }
 
-    function heartShare(shareId) {
-        userAxios.put(`/protected/shares/like/${shareId}`)
+    function heartShare(shareId, likeOrUnlike) {
+        userAxios.put(`/protected/shares/${likeOrUnlike}/${shareId}`)
             .then(res => {
                 setAllShares(shares => shares.map(share => share._id !== shareId ? share : res.data))
             })
             .catch(err => console.error(err.response.data.errMsg))
     }
 
-    function unHeartShare(shareId) {
-        userAxios.put(`/protected/shares/unlike/${shareId}`)
-            .then(res => {
-                setAllShares(shares => shares.map(share => share._id !== shareId ? share : res.data))
-            })
-            .catch(err => console.error(err.response.data.errMsg))
-    }
+    // function unHeartShare(shareId) {
+    //     userAxios.put(`/protected/shares/unlike/${shareId}`)
+    //         .then(res => {
+    //             setAllShares(shares => shares.map(share => share._id !== shareId ? share : res.data))
+    //         })
+    //         .catch(err => console.error(err.response.data.errMsg))
+    // }
 
     return (
         <HomeContext.Provider 
             value={{
                 allShares,
                 getAllShares,
-                heartShare,
-                unHeartShare
+                heartShare
+                // unHeartShare
             }}
         >
             { props.children }

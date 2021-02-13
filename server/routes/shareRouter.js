@@ -71,8 +71,12 @@ shareRouter.route("/:shareId")
 // like a share
 shareRouter.put("/like/:shareId", (req, res, next) => {
     Share.findOneAndUpdate(
-        { _id: req.params.shareId },
-        { $inc: { likes: 1 } },
+        { _id: req.params.shareId, likedUsers: { $nin: [ req.user._id ] } },
+        { 
+            $inc: { likes: 1 },
+            $pull: { unlikedUsers: req.user._id },
+            $addToSet: { likedUsers: req.user._id }
+        },
         { new: true }).populate('user')
         .exec((err, likedShare) => {
             if(err) {
@@ -87,8 +91,12 @@ shareRouter.put("/like/:shareId", (req, res, next) => {
 // unlike a share
 shareRouter.put("/unlike/:shareId", (req, res, next) => {
     Share.findOneAndUpdate(
-        { _id: req.params.shareId },
-        { $inc: { likes: -1 } },
+        { _id: req.params.shareId, likedUsers: { $in: [ req.user._id ] } },
+        { 
+            $inc: { likes: -1 },
+            $pull: { likedUsers: req.user._id },
+            $addToSet: { unlikedUsers: req.user._id }
+        },
         { new: true }).populate('user')
         .exec((err, unLikedShare) => {
             if(err) {

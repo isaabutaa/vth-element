@@ -14,6 +14,8 @@ const shareSchema = new Schema({
         type: Number,
         default: 0
     },
+    likedUsers: [],
+    unlikedUsers: [],
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",

@@ -1,13 +1,14 @@
 import PublicShare from './PublicShare.js'
 
 export default function PublicSharesList(props) {
-    const { allShares, like, unlike } = props
+    const { allShares, heartShare, userObj } = props
 
     const publicShares = allShares.map(share => <PublicShare 
                                                     {...share} 
                                                     key={share._id} 
-                                                    like={like} 
-                                                    unlike={unlike} 
+                                                    heartShare={heartShare} 
+                                                    userObj={userObj}
+                                                    // unlike={unlike} 
                                                 />)
     return (
         <div className="public-shares">
