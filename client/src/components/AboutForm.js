@@ -12,6 +12,7 @@ export default function AboutForm(props) {
     function handleSubmit(e) {
         e.preventDefault()
         saveAboutMe(aboutUser)
+        setAboutUser({ text: "" })
     }
 
     return (

@@ -11,6 +11,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     }, 
+    about: {
+        type: String
+    },
     memberSince: {
         type: Date,
         default: Date.now

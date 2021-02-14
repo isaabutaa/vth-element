@@ -46,13 +46,28 @@ export default function AuthProvider(props) {
         setUserState({ user: {}, token: "" })
     }
 
+    function saveAboutMe(userAboutMeObj) {
+        userAxios.put("/protected/about-me", userAboutMeObj)
+            .then(res => {
+                setUserState(userState => ({
+                    ...userState,
+                    user: {
+                        ...userState.user,
+                        about: res.data.text
+                    }
+                }))
+            })
+            .catch(err => console.error(err.response.data.errMsg))
+    }
+
     return (
         <authContext.Provider 
             value={{
                 ...userState,
                 login,
                 signup,
-                signout
+                signout,
+                saveAboutMe
             }}
         >
             {props.children}

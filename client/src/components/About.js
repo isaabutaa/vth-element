@@ -5,11 +5,10 @@ export default function About(props) {
     return (
         <div>
             {
-                userAboutMe.length > 1 ?
+                userAboutMe ?
                     <div className="about-container">
                         <h3>About:</h3>
                         <p>{userAboutMe}</p>
-                        {/* <p className="edit">edit</p> */}
                     </div>
                 :
                     <AboutForm 
