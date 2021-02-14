@@ -4,9 +4,9 @@ export default function PublicShare(props) {
     const { shareText, _id, datePosted, likes, likedUsers, user: { username }, heartShare, userObj } = props
     const { _id: userId } = userObj
     const alreadyLiked = likedUsers.includes(userId)
-    const [heartColor, setHeartColor] = useState(alreadyLiked ? "red" : "whitesmoke")
     const date = datePosted.slice(0, datePosted.indexOf('T'))
     const userName = <span style={{color: "blue"}}>{username}</span>
+    const [heartColor, setHeartColor] = useState(alreadyLiked ? "red" : "whitesmoke") // heart color state
     const heart = <span style={{color: heartColor}} onClick={() => likeShare()}>&#10084;</span>
     
     function likeShare() {

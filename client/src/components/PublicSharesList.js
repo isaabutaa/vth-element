@@ -8,7 +8,6 @@ export default function PublicSharesList(props) {
                                                     key={share._id} 
                                                     heartShare={heartShare} 
                                                     userObj={userObj}
-                                                    // unlike={unlike} 
                                                 />)
     return (
         <div className="public-shares">

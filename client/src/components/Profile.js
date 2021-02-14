@@ -4,14 +4,11 @@ import { authContext } from '../context/AuthProvider.js'
 import SharesList from './SharesList.js'
 import About from './About.js'
 
-export default function Profile(props) {
-    const { user: {username, _id, memberSince} } = useContext(authContext)
-    const { userShares, userAboutMe, addShare, editShare, deleteShare, getUserShares, saveAboutMe, getAboutMe } = useContext(UserContext)
+export default function Profile() {
+    const { user: {username, about}, saveAboutMe } = useContext(authContext)
+    const { userShares, addShare, editShare, deleteShare, getUserShares } = useContext(UserContext)
 
     useEffect(() => {
-        if(userAboutMe.length > 0) {
-            getAboutMe(_id)
-        }
         getUserShares()
     }, [])
 
@@ -19,7 +16,7 @@ export default function Profile(props) {
         <div>
             <h1 className="user-greeting">Hello, {username}.</h1>
             <About 
-                userAboutMe={userAboutMe}
+                userAboutMe={about}
                 saveAboutMe={saveAboutMe}
             />
             <SharesList 
