@@ -14,7 +14,7 @@ export default function Share(props) {
         <div className="share">
             { showEditForm 
                 ? 
-                    <ShareForm text={shareText} btnText="Save" submit={editShare} shareId={_id} />
+                    <ShareForm toggleEditForm={toggleEditForm} text={shareText} btnText="Save" submit={editShare} shareId={_id} />
                 :
                     <>
                         <h5>{shareText}</h5>

@@ -1,12 +1,13 @@
 import { useState } from 'react'
 
 export default function ShareForm(props) {
-    const { submit, btnText, text, shareId } = props
+    const { submit, btnText, text, shareId, toggleEditForm } = props
     const [share, setShare] = useState({ shareText: text || "" })
 
     function handleSubmit(e) {
         e.preventDefault()
         submit(share, shareId)
+        toggleEditForm()
         setShare({ shareText: "" })
     }
 
