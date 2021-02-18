@@ -16,16 +16,16 @@ In short, you can create a profile with a username and encrypted password, add a
 
 ### Views
 
-This project isn't deployed, so for now you'll have to enjoy these beautiful screenshots of the login, profile, and home pages :laugh:
+This project isn't deployed, so for now you'll have to enjoy these beautiful screenshots of the login, profile, and home pages :laughing:
 
 Login:
 
-![login page]('./screenshots/vth-element-login.PNG')
+![login page](./screenshots/vth-element-login.PNG)
 
 Profile:
 
-![profile page]('./screenshots/vth-element-profile.PNG')
+![profile page](./screenshots/vth-element-profile.PNG)
 
 Home:
 
-![home page]('./screenshots/vth-element-home.PNG')
+![home page](./screenshots/vth-element-home.PNG)
