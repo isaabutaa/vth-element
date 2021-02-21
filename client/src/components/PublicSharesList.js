@@ -1,4 +1,5 @@
 import PublicShare from './PublicShare.js'
+import '../stylesheets/PublicSharesList.css'
 
 export default function PublicSharesList(props) {
     const { allShares, heartShare, userObj } = props

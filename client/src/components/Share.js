@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ShareForm from './ShareForm.js'
+import '../stylesheets/Share.css'
 
 export default function Share(props) {
     const [showEditForm, setShowEditForm] = useState(false)

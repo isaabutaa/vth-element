@@ -5,7 +5,7 @@ export default function PublicShare(props) {
     const { _id: userId } = userObj
     const alreadyLiked = likedUsers.includes(userId)
     const date = datePosted.slice(0, datePosted.indexOf('T'))
-    const userName = <span style={{color: "orange"}}>{username}</span>
+    const userName = <span style={{color: "#ff073a"}}>{username}</span>
     const [heartColor, setHeartColor] = useState(alreadyLiked ? "red" : "whitesmoke") // heart color state
     const heart = <span style={{color: heartColor}} onClick={() => likeShare()}>&#10084;</span>
     

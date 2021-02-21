@@ -1,0 +1,15 @@
+.share-st-new, .hide-form {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.hide-form {
+    font-size: small;
+}
+
+.shares-list-container {
+    width: 75%;
+    margin: 15px auto;
+}

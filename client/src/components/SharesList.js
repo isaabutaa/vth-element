@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ShareForm from './ShareForm.js'
 import Share from './Share.js'
+import '../stylesheets/SharesList.css'
 
 export default function SharesList(props) {
     const [displayShareForm, setDisplayShareForm] = useState(false)

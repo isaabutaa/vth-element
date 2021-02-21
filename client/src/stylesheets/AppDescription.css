@@ -1,0 +1,25 @@
+.description-container {
+    width: 80%;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+.description {
+    text-align: left;
+    color: whitesmoke;
+}
+
+.screenshot-title {
+    text-align: center;
+    color: whitesmoke;
+}
+
+img {
+    width: 100%;
+    margin: auto;
+}
+
+.auth-link {
+    color: whitesmoke;
+}
+

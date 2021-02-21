@@ -18,7 +18,7 @@ export default function App() {
                 <Route exact path="/">
                     { token ? <Redirect to="/profile" /> : <Auth /> }
                 </Route>
-                <Route path="/about-vthelement">
+                <Route path="/vthelement">
                     <AppDescription />
                 </Route>
                 <Route path="/profile">

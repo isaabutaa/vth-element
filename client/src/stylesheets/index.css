@@ -7,12 +7,15 @@ body {
 
 /* login page */
 
+/* in Header.css
 .title {
     text-align: center;
     font-family: sans-serif;
     color: whitesmoke;
-}
+} 
+*/
 
+/* in LoginForm.css
 .login-form-container {
     width: 325px;
     margin-left: auto;
@@ -39,22 +42,24 @@ body {
     border-radius: 15px;
     background-color: #f4f4f4;
     font-family: sans-serif;
-}
+} */
 
-.toggle-member-txt {
+/* in Auth.css 
+.sub-form-txt {
     text-align: center;
     font-family: sans-serif;
     text-decoration-line: underline;
     color: whitesmoke;
-}
+} */
 
+/* navbar */
+
+/* in Navbar.css
 .signout-txt {
     font-family: sans-serif;
     text-decoration-line: underline;
     color: whitesmoke;
 }
-
-/* navbar */
 
 .navbar {
     position: fixed;
@@ -70,16 +75,18 @@ body {
     color: #333333;
     font-family: sans-serif;
     text-decoration-line: underline;
-}
+} */
 
 /* profile */
 
+/* in Profile.css
 .user-greeting {
     text-align: center;
     font-family: sans-serif;
     color: whitesmoke;
-}
+} */
 
+/* in About.css
 .about-container {
     width: 75%;
     margin-left: auto;
@@ -95,8 +102,9 @@ body {
 .about-container p:nth-of-type(2) {
     font-size: small;
     margin: 0;
-}
+} */
 
+/* in SharesList.css
 .share-st-new, .hide-form {
     color: whitesmoke;
     font-family: sans-serif;
@@ -111,8 +119,9 @@ body {
 .shares-list-container {
     width: 75%;
     margin: 15px auto;
-}
+} */
 
+/* in Share.css 
 .share {
     color: whitesmoke;
     font-family: sans-serif;
@@ -143,11 +152,12 @@ body {
 
 .delete {
     color: tomato;
-}
+} */
 
 /* Home page */
 
+/* in PublicShares.css 
 .public-shares {
     width: 75%;
     margin: 15px auto;
-}
+} */

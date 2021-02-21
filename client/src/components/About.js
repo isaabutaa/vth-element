@@ -1,4 +1,5 @@
 import AboutForm from './AboutForm.js'
+import '../stylesheets/About.css'
 
 export default function About(props) {
     const { userAboutMe, saveAboutMe } = props

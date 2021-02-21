@@ -17,7 +17,7 @@ export default function ShareForm(props) {
     }
 
     return (
-        <form className="form share-form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <input 
                 type="text"
                 placeholder="Share here..."

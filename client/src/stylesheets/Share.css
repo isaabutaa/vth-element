@@ -1,0 +1,31 @@
+.share {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.share h5 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 7.5px;
+    margin-bottom: 0;
+}
+
+.share p {
+    text-align: left;
+    font-size: small;
+    display: inline-block;
+}
+
+.edit, .delete {
+    padding: 5px;
+    margin: 2.5px;
+}
+
+.edit {
+    color: #39ff14;
+}
+
+.delete {
+    color: #ff073a;
+}

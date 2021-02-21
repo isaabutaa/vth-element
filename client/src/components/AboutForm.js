@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../stylesheets/AboutForm.css'
 
 export default function AboutForm(props) {
     const [aboutUser, setAboutUser] = useState({ text: "" })

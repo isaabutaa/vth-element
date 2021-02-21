@@ -1,0 +1,23 @@
+/* Mobile styling */
+
+.signout-txt {
+    font-family: sans-serif;
+    text-decoration-line: underline;
+    /* color: whitesmoke; */
+}
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    margin-top: 5px;
+}
+
+.nav-link {
+    color: #333333;
+    font-family: sans-serif;
+    text-decoration-line: none;
+}

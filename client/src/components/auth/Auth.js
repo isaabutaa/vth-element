@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { authContext } from '../../context/AuthProvider.js'
 import LoginForm from './LoginForm.js'
+import '../../stylesheets/Auth.css'
 
 export default function Auth() {
     const [loginCredentials, setLoginCredentials] = useState({ username: "", password: "" })
@@ -35,8 +36,8 @@ export default function Auth() {
                 btnText={loginOrSignup}
                 {...loginCredentials} 
             />
-            <p className="toggle-member-txt" onClick={() => setBtnText()}>{memberOrNot}</p>
-            <p><Link to="/about-vthelement">What is the Vth Element?</Link></p>
+            <p className="sub-form-txt" onClick={() => setBtnText()}>{memberOrNot}</p>
+            <Link className="sub-txt-2" to="/vthelement"><p>What is <span className="vth-element">Vth Element</span>?</p></Link>
         </div>
     )
 }

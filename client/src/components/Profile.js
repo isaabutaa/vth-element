@@ -3,6 +3,7 @@ import { UserContext } from '../context/UserProvider.js'
 import { authContext } from '../context/AuthProvider.js'
 import SharesList from './SharesList.js'
 import About from './About.js'
+import '../stylesheets/Profile.css'
 
 export default function Profile() {
     const { user: {username, about}, saveAboutMe } = useContext(authContext)
@@ -14,7 +15,7 @@ export default function Profile() {
 
     return (
         <div>
-            <h1 className="user-greeting">Hello, {username}.</h1>
+            <h1 className="user-greeting">Hello, <span className="vth-element">{username}</span>.</h1>
             <About 
                 userAboutMe={about}
                 saveAboutMe={saveAboutMe}

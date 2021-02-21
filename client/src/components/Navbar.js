@@ -1,15 +1,21 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import '../stylesheets/Navbar.css'
 
 export default function Navbar(props) {
     const { signout } = props
+    const linkStyles = {
+        color: "#ff073a", 
+        fontFamily: "Bungee", 
+        textDecorationLine: "underline"
+    }
     return (
         <div className="navbar">
-            <Link to="/home">
-                <p className="nav-link">Home</p>
-            </Link>
-            <Link to="/profile" >
-                <p className="nav-link">Profile</p>
-            </Link>
+            <NavLink className="nav-link" activeStyle={linkStyles} to="/home">
+                <p>Home</p>
+            </NavLink>
+            <NavLink className="nav-link" activeStyle={linkStyles} to="/profile" >
+                <p>Profile</p>
+            </NavLink>
             <p className="nav-link signout-txt" onClick={() => signout()}>Signout</p>
         </div>
     )

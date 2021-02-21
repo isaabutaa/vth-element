@@ -1,0 +1,23 @@
+/* already included in LoginForm.css 
+.form {
+    text-align: center;
+} */
+
+.form > textarea {
+    font-size: medium;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+/* already included in LoginForm.css
+ .form > button {
+    display: block;
+    margin: 5px auto;
+    width: 100px;
+    font-size: medium;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+} */
