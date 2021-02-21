@@ -6,6 +6,7 @@ import Auth from './components/auth/Auth.js'
 import Navbar from './components/Navbar.js'
 import Profile from './components/Profile.js'
 import Home from './components/Home.js'
+import AppDescription from './components/AppDescription.js'
 
 export default function App() {
     const { token, signout } = useContext(authContext)
@@ -16,6 +17,9 @@ export default function App() {
             <Switch>
                 <Route exact path="/">
                     { token ? <Redirect to="/profile" /> : <Auth /> }
+                </Route>
+                <Route path="/about-vthelement">
+                    <AppDescription />
                 </Route>
                 <Route path="/profile">
                     { !token ? <Redirect to="/" /> : <Profile /> }

@@ -3,7 +3,7 @@ import ShareForm from './ShareForm.js'
 
 export default function Share(props) {
     const [showEditForm, setShowEditForm] = useState(false)
-    const {shareText, _id, datePosted, likes, user, editShare, deleteShare}= props
+    const {shareText, _id, datePosted, editShare, deleteShare}= props
 
     function toggleEditForm() {
         setShowEditForm(prev => !prev)

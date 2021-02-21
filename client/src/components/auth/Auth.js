@@ -1,5 +1,6 @@
-import {useState, useContext} from 'react'
-import {authContext} from '../../context/AuthProvider.js'
+import { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { authContext } from '../../context/AuthProvider.js'
 import LoginForm from './LoginForm.js'
 
 export default function Auth() {
@@ -35,6 +36,7 @@ export default function Auth() {
                 {...loginCredentials} 
             />
             <p className="toggle-member-txt" onClick={() => setBtnText()}>{memberOrNot}</p>
+            <p><Link to="/about-vthelement">What is the Vth Element?</Link></p>
         </div>
     )
 }
