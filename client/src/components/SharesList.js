@@ -11,7 +11,7 @@ export default function SharesList(props) {
     }
     const shareComponents = userShares.map(share => <Share key={share._id} {...share} editShare={editShare} deleteShare={deleteShare} />)
     return (
-        <div className="shares-list-container">
+        <div>
             {
                 displayShareForm ?
                     <>
@@ -21,11 +21,20 @@ export default function SharesList(props) {
                 :
                     <h3 className="share-st-new" onClick={() => toggleForm()}>Share something new</h3>
             }
-            { userShares.length > 1 && <h3 style={{
+            { 
+                userShares.length > 1 && 
+                <h3 style={{
                     color: "whitesmoke", 
                     fontFamily: "sans-serif", 
-                    textAlign: "center"}}>Your shares:</h3>}
-            {shareComponents}
+                    textAlign: "center"
+                    }}
+                >
+                    Your shares:
+                </h3>
+            }
+            <div className="shares-list-container">
+                {shareComponents}   
+            </div>
         </div>
     )
 }

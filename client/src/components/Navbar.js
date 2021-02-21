@@ -17,6 +17,7 @@ export default function Navbar(props) {
                 <p>Profile</p>
             </NavLink>
             <p className="nav-link signout-txt" onClick={() => signout()}>Signout</p>
+            <h1 className="vth-element-nav">{"< "}Vth Element{" />"}</h1>
         </div>
     )
 }

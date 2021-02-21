@@ -1,9 +1,6 @@
-/* Mobile styling */
-
 .signout-txt {
     font-family: sans-serif;
     text-decoration-line: underline;
-    /* color: whitesmoke; */
 }
 
 .navbar {
@@ -12,12 +9,41 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: whitesmoke;
-    margin-top: 5px;
 }
 
 .nav-link {
     color: #333333;
     font-family: sans-serif;
     text-decoration-line: none;
+}
+
+.vth-element-nav {
+    display: none;
+    font-family: 'Bungee';
+    color: #ff073a;
+    line-height:0%;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar {
+        top: 0;
+        bottom: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        padding: 0 25px;
+    }
+
+    .vth-element-nav {
+        display: block;
+        position: fixed;
+        right: 5%;
+    }
+
 }
