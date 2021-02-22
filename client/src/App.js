@@ -13,7 +13,7 @@ export default function App() {
     const navbar = token && <Navbar signout={signout} />
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <Switch>
                 <Route exact path="/">
                     { token ? <Redirect to="/profile" /> : <Auth /> }

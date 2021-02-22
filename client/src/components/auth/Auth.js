@@ -29,7 +29,7 @@ export default function Auth() {
 
     const memberOrNot = loginOrSignup === "Login" ? "Not a member? Sign Up" : "Already a member? Login"
     return (
-        <div>
+        <div className="auth-container">
             <h1 className="title-1">{'< '}Vth Element{' />'}</h1>
             <LoginForm
                 handleChange={handleChange}
