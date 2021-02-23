@@ -3,6 +3,10 @@
     text-decoration-line: underline;
 }
 
+.signout-txt:hover {
+    cursor: pointer;
+}
+
 .navbar {
     position: fixed;
     bottom: 0;

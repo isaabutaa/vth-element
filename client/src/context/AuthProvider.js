@@ -49,12 +49,12 @@ export default function AuthProvider(props) {
     function saveAboutMe(userAboutMeObj) {
         userAxios.put("/protected/about-me", userAboutMeObj)
             .then(res => {
+                const updatedUser = JSON.parse(localStorage.getItem("user"))
+                updatedUser.about = res.data.text
+                localStorage.setItem("user", JSON.stringify(updatedUser))
                 setUserState(userState => ({
                     ...userState,
-                    user: {
-                        ...userState.user,
-                        about: res.data.text
-                    }
+                    user: JSON.parse(localStorage.getItem("user"))
                 }))
             })
             .catch(err => console.error(err.response.data.errMsg))
