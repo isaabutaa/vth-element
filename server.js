@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressJWT = require('express-jwt')
 const port = process.env.PORT || 9000
-const secret = process.env.MY_SECRET || "menari bailar raqs Harakat"
+const mySecret = process.env.MY_SECRET || "menari bailar raqs Harakat"
 const path = require('path')
 
 // middleware
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
 
 // routes
 app.use("/auth", require('./routes/authRouter.js'))
-app.use("/protected", expressJWT({ secret, algorithms: ['HS256'] }))
+app.use("/protected", expressJWT({ secret: mySecret, algorithms: ['HS256'] }))
 app.use("/protected/shares", require('./routes/shareRouter.js'))
 app.use("/protected/about-me", require('./routes/aboutRouter.js'))
 
