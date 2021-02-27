@@ -4,17 +4,26 @@ require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressJWT = require('express-jwt')
-const port = process.env.PORT || 9000
-const mySecret = process.env.MY_SECRET || "menari bailar raqs Harakat"
-const path = require('path')
+const port = process.env.PORT
+const mySecret = process.env.MY_SECRET
+// const path = require('path')
 
 // middleware
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, 'client', 'build')))
+// app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 // connect to database
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost:27017/vth-element",
+    {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false
+    },
+    () => console.log("Connected to vth-element db!!!")
+)
 
 // routes
 app.use("/auth", require('./routes/authRouter.js'))
@@ -32,9 +41,9 @@ app.use((err, req, res, next) => {
 })
 
 // for deployment and having express serve up the React app
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-})
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+// })
 
 // listen to server
 app.listen(port, () => console.log(`Server is running on Port ${port}`))
