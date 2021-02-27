@@ -4,8 +4,8 @@ require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const expressJWT = require('express-jwt')
-const port = process.env.PORT
-const secret = process.env.MY_SECRET
+const port = process.env.PORT || 9000
+const secret = process.env.MY_SECRET || "menari bailar raqs Harakat"
 const path = require('path')
 
 // middleware
