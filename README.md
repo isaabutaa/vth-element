@@ -20,12 +20,12 @@ This project isn't deployed, so for now you'll have to enjoy these beautiful scr
 
 Login:
 
-![login page](./screenshots/vth-element-login.PNG)
+![login page](./screenshots/vthelement-login.PNG)
 
 Profile:
 
-![profile page](./screenshots/vth-element-profile.PNG)
+![profile page](./screenshots/vthelement-frodo.PNG)
 
 Home:
 
-![home page](./screenshots/vth-element-home.PNG)
+![home page](./screenshots/vthelement-home.PNG)
