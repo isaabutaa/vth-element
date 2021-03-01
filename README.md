@@ -16,8 +16,6 @@ In short, you can create a profile with a username and encrypted password, add a
 
 ### Views
 
-This project isn't deployed, so for now you'll have to enjoy these beautiful screenshots of the login, profile, and home pages :laughing:
-
 Login:
 
 ![login page](./screenshots/vthelement-login.PNG)
