@@ -35,6 +35,8 @@ userSchema.pre("save", function(next) {
     })
 })
 
+
+
 // method to verify encrypted password on login
 userSchema.methods.verifyPassword = function(passwordAttempt, callback) {
     bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
