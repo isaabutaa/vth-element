@@ -32,7 +32,7 @@ authRouter.post("/signup", (req, res, next) => {
 // login
 authRouter.post("/login", (req, res, next) => {
     User.findOne(
-        { username: req.body.username.toLowerCase() }, 
+        { username: req.body.username }, 
         (err, user) => {
             if(err) {
                 res.status(500)
