@@ -44,7 +44,7 @@ authRouter.post("/login", (req, res, next) => {
             }
             if(!isMatch) {
                 res.status(403)
-                return next(new Error("Incorrect username or password"))
+                return next(new Error("Username or Password is incorrect"))
             }
             const token = jwt.sign(user.hidePassword(), process.env.MY_SECRET)
             return res.status(200).send({ token, user: user.hidePassword() })
